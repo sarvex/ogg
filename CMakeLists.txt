@@ -72,8 +72,8 @@ configure_file(include/ogg/config_types.h.in include/ogg/config_types.h @ONLY)
 
 set(OGG_HEADERS
     ${CMAKE_CURRENT_BINARY_DIR}/include/ogg/config_types.h
-    include/ogg/ogg.h
-    include/ogg/os_types.h
+    "${CMAKE_CURRENT_SOURCE_DIR}/include/ogg/ogg.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/include/ogg/os_types.h"
 )
 
 set(OGG_SOURCES
@@ -102,7 +102,7 @@ set_target_properties(
     ogg PROPERTIES
     SOVERSION ${LIB_SOVERSION}
     VERSION ${LIB_VERSION}
-    PUBLIC_HEADER "${OGG_HEADERS}"
+    #PUBLIC_HEADER "${OGG_HEADERS}"
 )
 
 if(BUILD_FRAMEWORK)
